@@ -16,7 +16,7 @@ class Item11(
     fun 가독성이_떨어지는_함수() {
         person?.takeIf { it.isAdult }
             ?.let {
-                view.showPerson(person)
+                view.showPerson(it)
                 print("aaaa")
             } ?: run { view.showError() }
     }
@@ -27,7 +27,7 @@ class Person(val name: String, val isAdult: Boolean = true)
 
 class View() {
     fun showPerson(person: Person): String? {
-        print(person.name)
+        print(person)
         return null
     }
 
